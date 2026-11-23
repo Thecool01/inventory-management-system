@@ -34,7 +34,7 @@ export default function Products() {
       headerName: "Price",
       width: 150,
       description: "price of the product",
-      valueGetter: (params) => "$" + params.row.stock,
+      valueGetter: (params) => "$" + params.row.price,
     },
     {
       field: "stock",

@@ -41,7 +41,11 @@ export function createOrderColumns(onOrderDetail) {
       width: 300,
       description: "total amount of the order",
       valueGetter: (params) => {
-        const total = 300;
+        const total = params.row.products.reduce(
+          (subtotal, orderProduct) =>
+            subtotal + orderProduct.quantity * orderProduct.product.price,
+          0
+        );
         return total;
       },
     },
